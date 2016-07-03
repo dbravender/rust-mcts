@@ -201,7 +201,7 @@ impl<A: GameAction> fmt::Display for TreeNode<A> {
 
         // Nested definition for recursive formatting
         fn fmt_subtree<M: GameAction>(f: &mut fmt::Formatter, node: &TreeNode<M>, indent_level :i32) -> fmt::Result {
-            for _ in (0..indent_level) {
+            for _ in 0..indent_level {
                 try!(f.write_str("    "));
             }
             match node.action {
